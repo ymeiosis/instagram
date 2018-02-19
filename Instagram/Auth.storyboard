@@ -124,7 +124,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="esY-xY-HrR">
-                                <rect key="frame" x="40" y="255" width="295" height="240"/>
+                                <rect key="frame" x="40" y="325" width="295" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-8V-Bfa">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="240"/>
@@ -158,20 +158,30 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-Iv-xdp">
-                                <rect key="frame" x="40" y="525" width="295" height="30"/>
+                                <rect key="frame" x="40" y="595" width="295" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-rz-caJ">
+                                <rect key="frame" x="40" y="245" width="295" height="30"/>
+                                <state key="normal" title="Change Profile Image"/>
+                                <connections>
+                                    <action selector="loadImageButtonTapped:" destination="x4B-Fo-JGX" eventType="touchUpInside" id="vuE-Zz-Air"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vdd-Iv-xdp" firstAttribute="top" secondItem="esY-xY-HrR" secondAttribute="bottom" constant="30" id="Bv1-K3-5Nx"/>
-                            <constraint firstItem="esY-xY-HrR" firstAttribute="top" secondItem="oTg-nu-nv5" secondAttribute="bottom" constant="30" id="EMD-gi-d3w"/>
+                            <constraint firstItem="esY-xY-HrR" firstAttribute="top" secondItem="oTg-nu-nv5" secondAttribute="bottom" constant="100" id="EMD-gi-d3w"/>
+                            <constraint firstItem="IvO-rz-caJ" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" constant="40" id="Fw7-Av-eRA"/>
                             <constraint firstItem="oTg-nu-nv5" firstAttribute="top" secondItem="0t0-7j-uEW" secondAttribute="top" constant="64" id="NYo-sv-IfQ"/>
+                            <constraint firstItem="IvO-rz-caJ" firstAttribute="top" secondItem="oTg-nu-nv5" secondAttribute="bottom" constant="20" id="OBd-sY-GoK"/>
                             <constraint firstItem="esY-xY-HrR" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" constant="40" id="S2a-db-JZS"/>
                             <constraint firstItem="gve-pz-sc1" firstAttribute="trailing" secondItem="Vdd-Iv-xdp" secondAttribute="trailing" constant="40" id="Xnc-dj-g2W"/>
                             <constraint firstItem="Vdd-Iv-xdp" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" constant="40" id="c6M-Zs-vrM"/>
                             <constraint firstItem="oTg-nu-nv5" firstAttribute="trailing" secondItem="gve-pz-sc1" secondAttribute="trailing" id="dSW-N1-zs1"/>
                             <constraint firstItem="oTg-nu-nv5" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" id="rR0-Ny-kev"/>
+                            <constraint firstItem="gve-pz-sc1" firstAttribute="trailing" secondItem="IvO-rz-caJ" secondAttribute="trailing" constant="40" id="xLS-P4-1p0"/>
                             <constraint firstItem="gve-pz-sc1" firstAttribute="trailing" secondItem="esY-xY-HrR" secondAttribute="trailing" constant="40" id="z6i-CB-B3m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gve-pz-sc1"/>
@@ -180,7 +190,6 @@
                         <outlet property="emailTextField" destination="fF6-0w-QDq" id="zcq-Tw-i6d"/>
                         <outlet property="password1TextField" destination="A5P-5q-CcN" id="Vgl-16-Rd7"/>
                         <outlet property="password2TextField" destination="9b2-oY-wP9" id="2d9-hn-Sqj"/>
-                        <outlet property="profileImage" destination="oTg-nu-nv5" id="Xmk-C7-0fL"/>
                         <outlet property="profileImageView" destination="oTg-nu-nv5" id="EHi-P0-pN2"/>
                         <outlet property="signUpButton" destination="Vdd-Iv-xdp" id="YVT-f1-Yp9"/>
                         <outlet property="userNameTextField" destination="Kg4-HX-Iig" id="DaP-BW-W5A"/>

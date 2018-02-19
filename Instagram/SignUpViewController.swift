@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UINavigationControllerDelegate {
     
     var ref: DatabaseReference!
     let imagePicker = UIImagePickerController()
@@ -26,11 +26,19 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @IBAction func loadImageButtonTapped(_ sender: Any) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     
     @IBOutlet weak var profileImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
        
         ref = Database.database().reference()
 
@@ -66,7 +74,7 @@ class SignUpViewController: UIViewController {
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     
-                    guard let navVC = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as? FeedViewController else {return}
+                    guard let navVC = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {return}
                     
                     self.present(navVC, animated: true, completion: nil)
                     print("Sign Up Successful")

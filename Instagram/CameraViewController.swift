@@ -29,6 +29,7 @@ class CameraViewController: UIViewController, FusumaDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Fusuma()
         
         // Do any additional setup after loading the view.
@@ -48,6 +49,7 @@ class CameraViewController: UIViewController, FusumaDelegate {
         
         
         self.present(fusuma, animated: true, completion: nil)
+        
     }
 
     /*

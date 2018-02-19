@@ -10,6 +10,8 @@
 		6886D7427C506A536B3E717E /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F686C1D7086249EF66E516F /* Pods_Instagram.framework */; };
 		AAB947B2203A7C69001BB6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB947B1203A7C69001BB6BF /* GoogleService-Info.plist */; };
 		AAB947B4203A8CFF001BB6BF /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB947B3203A8CFF001BB6BF /* Auth.storyboard */; };
+		AAB947B6203AABA5001BB6BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB947B5203AABA5001BB6BF /* Extension.swift */; };
+		AAB947B8203AADD2001BB6BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB947B7203AADD2001BB6BF /* User.swift */; };
 		CB024612203A79C6000DD679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB024611203A79C6000DD679 /* AppDelegate.swift */; };
 		CB024614203A79C6000DD679 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB024613203A79C6000DD679 /* ViewController.swift */; };
 		CB024617203A79C6000DD679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB024615203A79C6000DD679 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		6F686C1D7086249EF66E516F /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB947B1203A7C69001BB6BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAB947B3203A8CFF001BB6BF /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		AAB947B5203AABA5001BB6BF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AAB947B7203AADD2001BB6BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C620FE975E2BAAC2E0017C5F /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		CB02460E203A79C6000DD679 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB024611203A79C6000DD679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				FCD723F8203A8A720085A9F7 /* SearchViewController.swift */,
 				FCD723FA203A8A810085A9F7 /* CameraViewController.swift */,
 				FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */,
+				AAB947B7203AADD2001BB6BF /* User.swift */,
+				AAB947B5203AABA5001BB6BF /* Extension.swift */,
 				CB024615203A79C6000DD679 /* Main.storyboard */,
 				FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */,
 				FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */,
@@ -271,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB947B6203AABA5001BB6BF /* Extension.swift in Sources */,
 				FCD72403203AADE00085A9F7 /* CommentTableViewCell.swift in Sources */,
 				FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */,
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,
@@ -279,6 +286,7 @@
 				FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */,
 				FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */,
 				FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */,
+				AAB947B8203AADD2001BB6BF /* User.swift in Sources */,
 				CB024612203A79C6000DD679 /* AppDelegate.swift in Sources */,
 				FCD723FF203AAC2D0085A9F7 /* CommentViewController.swift in Sources */,
 				FCD72401203AADBE0085A9F7 /* FeedTableViewCell.swift in Sources */,

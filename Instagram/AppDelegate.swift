@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Fusuma
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

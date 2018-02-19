@@ -26,6 +26,7 @@
 		FCD723FF203AAC2D0085A9F7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */; };
 		FCD72401203AADBE0085A9F7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */; };
 		FCD72403203AADE00085A9F7 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */; };
+		FCD72405203AB5420085A9F7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72404203AB5420085A9F7 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		FCD72404203AB5420085A9F7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */,
 				FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */,
 				FCD723F6203A8A620085A9F7 /* FeedViewController.swift */,
+				FCD72404203AB5420085A9F7 /* Post.swift */,
 				FCD723F8203A8A720085A9F7 /* SearchViewController.swift */,
 				FCD723FA203A8A810085A9F7 /* CameraViewController.swift */,
 				FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */,
@@ -280,6 +283,7 @@
 				FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */,
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,
 				CB024614203A79C6000DD679 /* ViewController.swift in Sources */,
+				FCD72405203AB5420085A9F7 /* Post.swift in Sources */,
 				FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */,
 				FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */,
 				FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */,

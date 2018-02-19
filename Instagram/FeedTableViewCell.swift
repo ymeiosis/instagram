@@ -14,6 +14,8 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var postedImageView: UIImageView!
     @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var commentImageView: UIImageView!
+    @IBOutlet weak var usernameLabel2: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var numOfLikesLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     

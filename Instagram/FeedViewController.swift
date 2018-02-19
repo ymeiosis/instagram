@@ -16,6 +16,7 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+            tableView.rowHeight = 580
         }
     }
     
@@ -72,7 +73,8 @@ extension FeedViewController : UITableViewDataSource {
         ref.child("user").child(currentPost.posterID).observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.key == "username" {
                 posterUsername = snapshot.value as? String ?? "No username in snapshot"
-            } else if snapshot.key == "profilePicUrl" {
+            }
+            if snapshot.key == "profilePicUrl" {
                 posterProfilePicUrl = snapshot.value as? String ?? "No profilepic in snapshot"
             }
         }
@@ -84,6 +86,10 @@ extension FeedViewController : UITableViewDataSource {
         cell.usernameLabel.text = posterUsername
         
         getImage(currentPost.postedPicUrl, cell.postedImageView)
+        
+        cell.usernameLabel2.text = posterUsername
+        
+        cell.captionLabel.text = currentPost.caption
         
         cell.numOfLikesLabel.text = String(currentPost.likes.count)
         

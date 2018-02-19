@@ -14,6 +14,7 @@ class Post {
     var likes : [String] = []
     var timeStamp : Int = 0
     var postedPicUrl : String = ""
+    var caption : String = ""
     
     init(postID: String, dict : [String : Any]){
         self.postID = postID
@@ -21,6 +22,7 @@ class Post {
         self.likes = dict["likes"] as? [String] ?? []
         self.timeStamp = dict["timeStamp"] as? Int ?? 0
         self.postedPicUrl = dict["postedPicUrl"] as? String ?? "No postedPicUrl"
+        self.caption = dict["caption"] as? String ?? "No caption"
     }
     
     

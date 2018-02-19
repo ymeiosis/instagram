@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 
-                guard let navVc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UINavigationController else {return}
+                guard let navVc = storyboard.instantiateViewController(withIdentifier: "FeedViewController") as? FeedViewController else {return}
                 
                 self.present(navVc, animated: true, completion: nil)
             }

@@ -20,7 +20,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password1TextField: UITextField!
     @IBOutlet weak var password2TextField: UITextField!
     
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton! {
+        didSet {
+            signUpButton.addTarget(self, action: #selector(signUpUser), for: .touchUpInside)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,7 @@ class SignUpViewController: UIViewController {
      
     }
     
-    func signUpUser() {
+    @objc func signUpUser() {
         guard let email = emailTextField.text,
         let password = password1TextField.text,
         let confirmPassword = password2TextField.text else {return}
@@ -52,9 +56,9 @@ class SignUpViewController: UIViewController {
                     
                     self.ref.child("users").child(validUser.uid).setValue(userPost)
                     
-                    let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     
-                    guard let navVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as? UINavigationController else {return}
+                    guard let navVC = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UINavigationController else {return}
                     
                     self.present(navVC, animated: true, completion: nil)
                     print("Sign Up Successful")

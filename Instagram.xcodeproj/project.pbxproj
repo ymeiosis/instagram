@@ -21,6 +21,9 @@
 		FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F8203A8A720085A9F7 /* SearchViewController.swift */; };
 		FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FA203A8A810085A9F7 /* CameraViewController.swift */; };
 		FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */; };
+		FCD723FF203AAC2D0085A9F7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */; };
+		FCD72401203AADBE0085A9F7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */; };
+		FCD72403203AADE00085A9F7 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		FCD723F8203A8A720085A9F7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FCD723FA203A8A810085A9F7 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +95,14 @@
 				CB024613203A79C6000DD679 /* ViewController.swift */,
 				FCD723F2203A8A440085A9F7 /* LoginViewController.swift */,
 				FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */,
+				FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */,
 				FCD723F6203A8A620085A9F7 /* FeedViewController.swift */,
 				FCD723F8203A8A720085A9F7 /* SearchViewController.swift */,
 				FCD723FA203A8A810085A9F7 /* CameraViewController.swift */,
 				FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */,
 				CB024615203A79C6000DD679 /* Main.storyboard */,
+				FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */,
+				FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */,
 				AAB947B3203A8CFF001BB6BF /* Auth.storyboard */,
 				CB024618203A79C6000DD679 /* Assets.xcassets */,
 				CB02461A203A79C6000DD679 /* LaunchScreen.storyboard */,
@@ -246,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD72403203AADE00085A9F7 /* CommentTableViewCell.swift in Sources */,
 				FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */,
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,
 				CB024614203A79C6000DD679 /* ViewController.swift in Sources */,
@@ -254,6 +264,8 @@
 				FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */,
 				FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */,
 				CB024612203A79C6000DD679 /* AppDelegate.swift in Sources */,
+				FCD723FF203AAC2D0085A9F7 /* CommentViewController.swift in Sources */,
+				FCD72401203AADBE0085A9F7 /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

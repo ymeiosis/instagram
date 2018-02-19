@@ -23,11 +23,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="558" id="0ed-lV-BGQ" customClass="FeedTableViewCell" customModule="Instagram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="558"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="580" id="0ed-lV-BGQ" customClass="FeedTableViewCell" customModule="Instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="580"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ed-lV-BGQ" id="TCf-8X-9gL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="557.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="579.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R7K-d4-Zmu">
@@ -67,14 +67,26 @@
                                                         <constraint firstAttribute="height" constant="40" id="eYV-es-2l4"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V91-67-3DM">
+                                                    <rect key="frame" x="15" y="489" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-VF-vU6">
+                                                    <rect key="frame" x="102" y="489" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1213 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-pf-YZ4">
-                                                    <rect key="frame" x="15" y="489" width="74" height="21"/>
+                                                    <rect key="frame" x="15" y="518" width="74" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvo-tv-hoN">
-                                                    <rect key="frame" x="15" y="518" width="122" height="21"/>
+                                                    <rect key="frame" x="15" y="547" width="122" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -82,7 +94,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iTC-F8-geG" firstAttribute="leading" secondItem="mSG-cZ-Ih9" secondAttribute="trailing" constant="8" id="0R8-LF-zNa"/>
-                                                <constraint firstItem="Wha-pf-YZ4" firstAttribute="top" secondItem="gwF-U3-efL" secondAttribute="bottom" constant="8" id="0u8-66-Y9L"/>
+                                                <constraint firstItem="V91-67-3DM" firstAttribute="leading" secondItem="TCf-8X-9gL" secondAttribute="leadingMargin" id="4kU-KS-ZoM"/>
+                                                <constraint firstItem="m2i-VF-vU6" firstAttribute="centerY" secondItem="V91-67-3DM" secondAttribute="centerY" id="5BW-qs-LFB"/>
                                                 <constraint firstItem="Nvo-tv-hoN" firstAttribute="top" secondItem="Wha-pf-YZ4" secondAttribute="bottom" constant="8" id="8xc-b5-MTF"/>
                                                 <constraint firstItem="mSG-cZ-Ih9" firstAttribute="top" secondItem="TCf-8X-9gL" secondAttribute="top" constant="10" id="HaD-Ug-Egd"/>
                                                 <constraint firstItem="WbK-3Z-a11" firstAttribute="leading" secondItem="gwF-U3-efL" secondAttribute="trailing" constant="8" id="K6z-Ug-Cs0"/>
@@ -90,15 +103,19 @@
                                                 <constraint firstItem="iTC-F8-geG" firstAttribute="centerY" secondItem="mSG-cZ-Ih9" secondAttribute="centerY" id="UKa-Fr-RWj"/>
                                                 <constraint firstItem="R7K-d4-Zmu" firstAttribute="top" secondItem="mSG-cZ-Ih9" secondAttribute="bottom" constant="8" id="W8b-ju-Cej"/>
                                                 <constraint firstItem="Nvo-tv-hoN" firstAttribute="leading" secondItem="TCf-8X-9gL" secondAttribute="leadingMargin" id="bIc-Yb-ksx"/>
+                                                <constraint firstItem="Wha-pf-YZ4" firstAttribute="top" secondItem="V91-67-3DM" secondAttribute="bottom" constant="8" id="gQx-fr-NLs"/>
                                                 <constraint firstItem="gwF-U3-efL" firstAttribute="leading" secondItem="TCf-8X-9gL" secondAttribute="leadingMargin" id="iGs-bv-ior"/>
                                                 <constraint firstAttribute="trailing" secondItem="R7K-d4-Zmu" secondAttribute="trailing" id="j6y-PT-AX6"/>
                                                 <constraint firstItem="gwF-U3-efL" firstAttribute="top" secondItem="R7K-d4-Zmu" secondAttribute="bottom" constant="8" id="mL9-a7-X8F"/>
                                                 <constraint firstItem="mSG-cZ-Ih9" firstAttribute="leading" secondItem="TCf-8X-9gL" secondAttribute="leading" constant="10" id="pLC-5s-Z1B"/>
                                                 <constraint firstItem="R7K-d4-Zmu" firstAttribute="leading" secondItem="TCf-8X-9gL" secondAttribute="leading" id="tc9-He-qLR"/>
+                                                <constraint firstItem="V91-67-3DM" firstAttribute="top" secondItem="gwF-U3-efL" secondAttribute="bottom" constant="8" id="uQr-S7-aPf"/>
+                                                <constraint firstItem="m2i-VF-vU6" firstAttribute="leading" secondItem="V91-67-3DM" secondAttribute="trailing" constant="8" id="vz9-9Z-cCi"/>
                                                 <constraint firstItem="WbK-3Z-a11" firstAttribute="top" secondItem="R7K-d4-Zmu" secondAttribute="bottom" constant="8" id="xyf-2i-LiD"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="captionLabel" destination="m2i-VF-vU6" id="TIS-jj-2Lb"/>
                                             <outlet property="commentImageView" destination="WbK-3Z-a11" id="fZa-hE-bIz"/>
                                             <outlet property="commentLabel" destination="Nvo-tv-hoN" id="Hjb-02-LLp"/>
                                             <outlet property="heartImageView" destination="gwF-U3-efL" id="lNx-NW-a8e"/>
@@ -106,6 +123,7 @@
                                             <outlet property="postedImageView" destination="R7K-d4-Zmu" id="KfO-gT-O3d"/>
                                             <outlet property="profilePicImageView" destination="mSG-cZ-Ih9" id="MdC-F0-nMB"/>
                                             <outlet property="usernameLabel" destination="iTC-F8-geG" id="sYy-Kg-J6l"/>
+                                            <outlet property="usernameLabel2" destination="V91-67-3DM" id="cSN-QR-Ty3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

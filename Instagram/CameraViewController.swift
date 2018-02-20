@@ -26,6 +26,8 @@ class CameraViewController: UIViewController, FusumaDelegate {
         print("Camera roll unauthorized")
     }
     
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

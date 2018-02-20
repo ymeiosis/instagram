@@ -123,7 +123,7 @@ class LoginViewController: UIViewController {
                         let data = picture["data"] as? [String:Any],
                             let url = data["url"] as? String {
                             
-                            let fbUser : [String:Any] = ["email" : email, "username" : name, "profilePicURL" : url]
+                            let fbUser : [String:Any] = ["email" : email, "username" : name, "profilePicUrl" : url]
                             
                             self.ref.child("users").child(validUser.uid).setValue(fbUser)
                             

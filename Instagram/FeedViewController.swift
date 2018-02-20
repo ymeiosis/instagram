@@ -17,6 +17,7 @@ class FeedViewController: UIViewController {
         didSet {
             tableView.dataSource = self
             tableView.rowHeight = 580
+            tableView.separatorStyle = .none
         }
     }
     
@@ -66,32 +67,42 @@ extension FeedViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FeedTableViewCell else {return UITableViewCell()}
         
+        cell.selectionStyle = .none
+        
         let currentPost = posts[indexPath.row]
         
         var posterUsername = "No posterUsername"
         var posterProfilePicUrl = "No profilePicUrl"
-        ref.child("user").child(currentPost.posterID).observeSingleEvent(of: .value) { (snapshot) in
-            if snapshot.key == "username" {
-                posterUsername = snapshot.value as? String ?? "No username in snapshot"
-            }
-            if snapshot.key == "profilePicUrl" {
-                posterProfilePicUrl = snapshot.value as? String ?? "No profilepic in snapshot"
-            }
+        ref.child("users").child(currentPost.posterID).child("username").observeSingleEvent(of: .value) { (snapshot) in
+            posterUsername = snapshot.value as? String ?? "No username in snapshot"
+            
+            cell.usernameLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+            cell.usernameLabel2.font = UIFont.boldSystemFont(ofSize: 17.0)
+
+            cell.usernameLabel.text = posterUsername
+            cell.usernameLabel2.text = posterUsername
+            
+            print(posterUsername)
         }
         
-        if let imageViewForCell = cell.profilePicImageView {
-            getImage(posterProfilePicUrl, imageViewForCell)
+        ref.child("users").child(currentPost.posterID).child("profilePicUrl").observeSingleEvent(of: .value) { (snapshot) in
+            posterProfilePicUrl = snapshot.value as? String ?? "No profilepic in snapshot"
+            
+            if let imageViewForCell = cell.profilePicImageView {
+                self.getImage(posterProfilePicUrl, imageViewForCell)
+            }
+            
+            
+            self.getImage(currentPost.postedPicUrl, cell.postedImageView)
+            
         }
         
-        cell.usernameLabel.text = posterUsername
-        
-        getImage(currentPost.postedPicUrl, cell.postedImageView)
-        
-        cell.usernameLabel2.text = posterUsername
         
         cell.captionLabel.text = currentPost.caption
         
-        cell.numOfLikesLabel.text = String(currentPost.likes.count)
+        cell.numOfLikesLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+        
+        cell.numOfLikesLabel.text = String(currentPost.likes.count) + " likes"
         
         
         return cell

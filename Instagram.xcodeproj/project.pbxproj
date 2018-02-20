@@ -17,6 +17,7 @@
 		CB024617203A79C6000DD679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB024615203A79C6000DD679 /* Main.storyboard */; };
 		CB024619203A79C6000DD679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB024618203A79C6000DD679 /* Assets.xcassets */; };
 		CB02461C203A79C6000DD679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB02461A203A79C6000DD679 /* LaunchScreen.storyboard */; };
+		CBC82CB9203B35120064C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC82CB8203B35120064C37F /* CollectionViewCell.swift */; };
 		FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F2203A8A440085A9F7 /* LoginViewController.swift */; };
 		FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */; };
 		FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F6203A8A620085A9F7 /* FeedViewController.swift */; };
@@ -46,6 +47,7 @@
 		CB024618203A79C6000DD679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB02461B203A79C6000DD679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB02461D203A79C6000DD679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBC82CB8203B35120064C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD723F2203A8A440085A9F7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FCD723F6203A8A620085A9F7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				AAB947B7203AADD2001BB6BF /* User.swift */,
 				AAB947B5203AABA5001BB6BF /* Extension.swift */,
 				CB024615203A79C6000DD679 /* Main.storyboard */,
+				CBC82CB8203B35120064C37F /* CollectionViewCell.swift */,
 				FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */,
 				FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */,
 				AAB947B3203A8CFF001BB6BF /* Auth.storyboard */,
@@ -292,6 +295,7 @@
 				FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */,
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,
 				CB024614203A79C6000DD679 /* ViewController.swift in Sources */,
+				CBC82CB9203B35120064C37F /* CollectionViewCell.swift in Sources */,
 				FCD72405203AB5420085A9F7 /* Post.swift in Sources */,
 				FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */,
 				FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */,

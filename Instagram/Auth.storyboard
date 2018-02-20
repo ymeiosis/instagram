@@ -18,14 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-xA-8tF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="190.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="signup" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-xA-8tF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="244.5"/>
+                                <color key="backgroundColor" red="0.57784221239428268" green="0.33454879922451097" blue="0.7628116904145078" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9C-dh-kdk">
-                                <rect key="frame" x="40" y="274.5" width="295" height="30"/>
-                                <state key="normal" title="Facebook login"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgU-Nn-ACa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgU-Nn-ACa">
                                 <rect key="frame" x="164" y="334.5" width="44" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -70,14 +67,17 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzj-WD-31I" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="40" y="264.5" width="295" height="30"/>
+                                <state key="normal" title="Facebook Login"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="R9C-dh-kdk" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" constant="40" id="3AF-NO-fky"/>
                             <constraint firstItem="yt1-33-ofU" firstAttribute="top" secondItem="ttd-5V-g9z" secondAttribute="bottom" constant="64" id="3oi-wI-LV0"/>
                             <constraint firstItem="ttd-5V-g9z" firstAttribute="top" secondItem="EqX-la-gIq" secondAttribute="bottom" constant="43" id="4K1-4L-XkP"/>
-                            <constraint firstItem="R9C-dh-kdk" firstAttribute="top" secondItem="J0o-xA-8tF" secondAttribute="bottom" constant="20" id="85L-Ue-oUF"/>
-                            <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="R9C-dh-kdk" secondAttribute="trailing" constant="40" id="8Cy-gU-53h"/>
+                            <constraint firstItem="pzj-WD-31I" firstAttribute="top" secondItem="J0o-xA-8tF" secondAttribute="bottom" constant="20" id="7m6-8H-miZ"/>
+                            <constraint firstItem="fgU-Nn-ACa" firstAttribute="top" secondItem="pzj-WD-31I" secondAttribute="bottom" constant="40" id="9pf-IL-0fk"/>
                             <constraint firstAttribute="bottom" secondItem="fgU-Nn-ACa" secondAttribute="bottom" constant="312" id="DwG-rB-a5B"/>
                             <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="EqX-la-gIq" secondAttribute="trailing" constant="40" id="HVV-Lh-tGB"/>
                             <constraint firstItem="J0o-xA-8tF" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" id="Paj-83-9xS"/>
@@ -85,20 +85,21 @@
                             <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="J0o-xA-8tF" secondAttribute="trailing" id="RSX-4w-C7L"/>
                             <constraint firstItem="ttd-5V-g9z" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" constant="125" id="ahZ-vb-rrZ"/>
                             <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="yt1-33-ofU" secondAttribute="trailing" constant="30" id="ath-iY-p7v"/>
-                            <constraint firstItem="fgU-Nn-ACa" firstAttribute="top" secondItem="R9C-dh-kdk" secondAttribute="bottom" constant="30" id="eNg-d6-THT"/>
-                            <constraint firstItem="J0o-xA-8tF" firstAttribute="top" secondItem="HzK-wE-3Nz" secondAttribute="top" id="eaI-PD-Cke"/>
+                            <constraint firstItem="pzj-WD-31I" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" constant="40" id="d7A-s5-oxF"/>
+                            <constraint firstItem="J0o-xA-8tF" firstAttribute="top" secondItem="zV8-Bg-svQ" secondAttribute="top" id="eaI-PD-Cke"/>
                             <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="fgU-Nn-ACa" secondAttribute="trailing" constant="167" id="f2I-yT-uq0"/>
                             <constraint firstItem="EqX-la-gIq" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" constant="40" id="khx-kR-0Nl"/>
                             <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="ttd-5V-g9z" secondAttribute="trailing" constant="125" id="rpv-nH-7ei"/>
                             <constraint firstItem="yt1-33-ofU" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" constant="30" id="tc2-If-0mq"/>
                             <constraint firstItem="fgU-Nn-ACa" firstAttribute="leading" secondItem="HzK-wE-3Nz" secondAttribute="leading" constant="164" id="wFX-hY-VQY"/>
+                            <constraint firstItem="HzK-wE-3Nz" firstAttribute="trailing" secondItem="pzj-WD-31I" secondAttribute="trailing" constant="40" id="yob-dl-jlt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HzK-wE-3Nz"/>
                     </view>
                     <navigationItem key="navigationItem" id="Gbo-fg-6Zn"/>
                     <connections>
                         <outlet property="emailTextField" destination="Ttu-bc-mKq" id="OQE-WP-zir"/>
-                        <outlet property="facebookLoginButton" destination="R9C-dh-kdk" id="2c3-pQ-Kk2"/>
+                        <outlet property="facebookLoginButton" destination="pzj-WD-31I" id="4UV-om-Lqk"/>
                         <outlet property="imageView" destination="J0o-xA-8tF" id="bXW-aY-fCd"/>
                         <outlet property="passwordTextField" destination="fux-uB-guJ" id="AMR-bg-FcL"/>
                         <outlet property="signInButton" destination="ttd-5V-g9z" id="m7u-SI-Ecn"/>
@@ -218,4 +219,7 @@
             <point key="canvasLocation" x="74" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="signup" width="1125" height="683"/>
+    </resources>
 </document>

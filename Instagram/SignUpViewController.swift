@@ -38,9 +38,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-       
+    
         ref = Database.database().reference()
 
      

@@ -209,6 +209,11 @@
                                                 <constraint firstItem="gam-jW-qa4" firstAttribute="centerY" secondItem="62G-hK-KAR" secondAttribute="centerY" id="vf2-Cq-HgF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="ahu-yn-rHd" id="aRf-2F-zW6"/>
+                                            <outlet property="userImageView" destination="gam-jW-qa4" id="3OD-dM-gEf"/>
+                                            <outlet property="usernameLabel" destination="qIf-2J-tM8" id="RLn-Zu-WqN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -232,10 +237,17 @@
                                 <rect key="frame" x="329" y="617" width="30" height="30"/>
                                 <state key="normal" title="✓"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVT-qe-GVU">
+                                <rect key="frame" x="151" y="30" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uNp-xy-fMN" firstAttribute="top" secondItem="7WB-uD-ZnL" secondAttribute="top" id="04f-3e-rJH"/>
+                            <constraint firstItem="IVT-qe-GVU" firstAttribute="leading" secondItem="fV2-88-MXE" secondAttribute="trailing" constant="8" id="2P3-Me-lVM"/>
                             <constraint firstItem="hMV-on-6ZP" firstAttribute="centerY" secondItem="z7p-sX-QKj" secondAttribute="centerY" id="Aky-pl-589"/>
                             <constraint firstItem="hMV-on-6ZP" firstAttribute="leading" secondItem="z7p-sX-QKj" secondAttribute="trailing" constant="8" id="DDj-Ec-1Nm"/>
                             <constraint firstItem="z7p-sX-QKj" firstAttribute="top" secondItem="He9-9a-tBt" secondAttribute="bottom" constant="11" id="G29-ae-KL6"/>
@@ -245,6 +257,7 @@
                             <constraint firstItem="fV2-88-MXE" firstAttribute="leading" secondItem="uNp-xy-fMN" secondAttribute="trailing" constant="8" id="Xq5-B3-RxF"/>
                             <constraint firstItem="7WB-uD-ZnL" firstAttribute="trailing" secondItem="aLS-OK-AcI" secondAttribute="trailing" constant="16" id="aIz-sP-PlP"/>
                             <constraint firstItem="He9-9a-tBt" firstAttribute="top" secondItem="uNp-xy-fMN" secondAttribute="bottom" constant="19" id="eus-lD-yff"/>
+                            <constraint firstItem="IVT-qe-GVU" firstAttribute="centerY" secondItem="fV2-88-MXE" secondAttribute="centerY" id="lzV-uC-h0n"/>
                             <constraint firstItem="z7p-sX-QKj" firstAttribute="leading" secondItem="7WB-uD-ZnL" secondAttribute="leading" constant="16" id="myz-wJ-fpE"/>
                             <constraint firstItem="7WB-uD-ZnL" firstAttribute="bottom" secondItem="z7p-sX-QKj" secondAttribute="bottom" constant="16" id="ocT-F4-O2P"/>
                             <constraint firstItem="7WB-uD-ZnL" firstAttribute="bottom" secondItem="aLS-OK-AcI" secondAttribute="bottom" constant="20" id="q2z-zk-bYI"/>
@@ -253,6 +266,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7WB-uD-ZnL"/>
                     </view>
+                    <connections>
+                        <outlet property="captionLabel" destination="IVT-qe-GVU" id="9Ws-Ev-M9t"/>
+                        <outlet property="commentTextField" destination="hMV-on-6ZP" id="UwN-rz-R7l"/>
+                        <outlet property="currentUserImageView" destination="z7p-sX-QKj" id="Mdx-Xl-bNY"/>
+                        <outlet property="posterImageView" destination="uNp-xy-fMN" id="Yez-p3-C2c"/>
+                        <outlet property="posterNameLabel" destination="fV2-88-MXE" id="GyQ-vq-U3b"/>
+                        <outlet property="sendButton" destination="aLS-OK-AcI" id="DW8-fo-LTU"/>
+                        <outlet property="tableView" destination="He9-9a-tBt" id="Wyu-XA-Q1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eok-op-H96" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

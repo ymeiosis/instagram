@@ -30,6 +30,7 @@
 		FCD72405203AB5420085A9F7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72404203AB5420085A9F7 /* Post.swift */; };
 		FCD72408203BCB170085A9F7 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */; };
 		FCD72409203BCB170085A9F7 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */; };
+		FCD7240B203C02620085A9F7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7240A203C02620085A9F7 /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		FCD72404203AB5420085A9F7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
+		FCD7240A203C02620085A9F7 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				CBC82CB8203B35120064C37F /* CollectionViewCell.swift */,
 				FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */,
 				FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */,
+				FCD7240A203C02620085A9F7 /* Comment.swift */,
 				AAB947B3203A8CFF001BB6BF /* Auth.storyboard */,
 				CB024618203A79C6000DD679 /* Assets.xcassets */,
 				CB02461A203A79C6000DD679 /* LaunchScreen.storyboard */,
@@ -295,6 +298,7 @@
 				FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */,
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,
 				CB024614203A79C6000DD679 /* ViewController.swift in Sources */,
+				FCD7240B203C02620085A9F7 /* Comment.swift in Sources */,
 				CBC82CB9203B35120064C37F /* CollectionViewCell.swift in Sources */,
 				FCD72405203AB5420085A9F7 /* Post.swift in Sources */,
 				FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */,

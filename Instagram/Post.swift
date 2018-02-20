@@ -16,6 +16,10 @@ class Post {
     var postedPicUrl : String = ""
     var caption : String = ""
     
+    init(){
+        
+    }
+    
     init(postID: String, dict : [String : Any]){
         self.postID = postID
         self.posterID = dict["posterID"] as? String ?? "No poster ID"

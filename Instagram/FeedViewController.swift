@@ -108,6 +108,8 @@ extension FeedViewController : UITableViewDataSource {
         
         cell.atIndexPath = indexPath
         
+        cell.posts = posts
+        
         cell.delegate = self
         
         return cell

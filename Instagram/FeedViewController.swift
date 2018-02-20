@@ -65,7 +65,9 @@ extension FeedViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FeedTableViewCell else {return UITableViewCell()}
+        //guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FeedTableViewCell else {return UITableViewCell()}
+        
+        guard let cell = Bundle.main.loadNibNamed("PostsTableViewCell", owner: nil, options: nil)?.first as? PostsTableViewCell else {return UITableViewCell()}
         
         cell.selectionStyle = .none
         
@@ -104,10 +106,33 @@ extension FeedViewController : UITableViewDataSource {
         
         cell.numOfLikesLabel.text = String(currentPost.likes.count) + " likes"
         
+        cell.atIndexPath = indexPath
+        
+        cell.delegate = self
         
         return cell
     }
 }
+
+extension FeedViewController : PostsTableViewCellDelegate {
+    func goToCommentViewController(at : IndexPath) {
+        
+        guard let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommentViewController") as? CommentViewController else {return}
+        
+        let selectedPost = posts[at.row]
+        
+        vc.selectedPost = selectedPost
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+}
+
+
+
+
 
 extension UIViewController {
     func getImage(_ urlString: String, _ imageView: UIImageView) {

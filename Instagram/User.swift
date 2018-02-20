@@ -17,6 +17,7 @@ class User {
     var userName : String = ""
     var url : String = ""
     
+    
     init(uid: String, dict: [String:Any]) {
         
         self.uid = uid

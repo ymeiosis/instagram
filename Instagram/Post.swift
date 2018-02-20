@@ -11,7 +11,7 @@ import Foundation
 class Post {
     var postID : String = ""
     var posterID : String = ""
-    var likes : [String] = []
+    var likes : [String : Bool] = [:]
     var timeStamp : Int = 0
     var postedPicUrl : String = ""
     var caption : String = ""
@@ -19,7 +19,7 @@ class Post {
     init(postID: String, dict : [String : Any]){
         self.postID = postID
         self.posterID = dict["posterID"] as? String ?? "No poster ID"
-        self.likes = dict["likes"] as? [String] ?? []
+        self.likes = dict["likes"] as? [String : Bool] ?? [:]
         self.timeStamp = dict["timeStamp"] as? Int ?? 0
         self.postedPicUrl = dict["postedPicUrl"] as? String ?? "No postedPicUrl"
         self.caption = dict["caption"] as? String ?? "No caption"

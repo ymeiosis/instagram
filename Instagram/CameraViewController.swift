@@ -29,6 +29,7 @@ class CameraViewController: UIViewController, FusumaDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Fusuma()
         
         // Do any additional setup after loading the view.
@@ -42,12 +43,13 @@ class CameraViewController: UIViewController, FusumaDelegate {
     func Fusuma() {
         let fusuma = FusumaViewController()
         fusuma.delegate = self
-        fusuma.availableModes = [.library, .camera, .video] // The default value is [.library, .camera].
+        fusuma.availableModes = [.library, .camera] // The default value is [.library, .camera].
         fusuma.cropHeightRatio = 0.6 // Height-to-width ratio. The default value is 1, which means a squared-size photo.
         fusuma.allowMultipleSelection = true // You can select multiple photos from the camera roll. The default value is false.
         
         
-        self.present(fusuma, animated: true, completion: nil)
+//        self.present(fusuma, animated: true, completion: nil)
+        self.parent?.present(fusuma, animated: true, completion: nil)
     }
 
     /*

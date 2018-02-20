@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignUpViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -65,8 +66,12 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
                 if let validError = error {
                     self.showAlert(withTitle: "Error", message: validError.localizedDescription)
                 }
-                
+            
                 if let validUser = user {
+                    
+                    if let image = self.profileImageView.image {
+                        self.uploadToStorage(image)
+                    }
                     
                     let userPost: [String:Any] = ["email" : email, "username" : userName]
                     
@@ -83,6 +88,39 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
             
         }
     }
+    
+    func uploadToStorage(_ image: UIImage) {
+        
+        //Create Storage reference (location)
+        let storageRef = Storage.storage().reference()
+        
+        //convert image to data
+        guard let imageData = UIImageJPEGRepresentation(image, 0.5) else {return}
+        
+        // metadata contains details on the file type
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        storageRef.child(uid).child("profilepic").putData(imageData, metadata: metaData) { (meta, error) in
+            
+            //Error Handling
+            if let validError = error {
+                print(validError.localizedDescription)
+            }
+            
+            //Handle Successful case with metadata returned
+            //MetaData contains details on the file uploaded on storage
+            // We are checking whether a download URL exists
+            if let downloadURL = meta?.downloadURL()?.absoluteString {
+                
+                self.ref.child("users").child(uid).child("profilePicURL").setValue(downloadURL)
+                
+            }
+        }
+    }
+    
     
 }
 

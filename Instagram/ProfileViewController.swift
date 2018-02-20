@@ -9,6 +9,26 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+
+    @IBAction func addUser(_ sender: Any) {
+    }
+    
+    @IBAction func refresh(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var userPic: UIButton!
+    
+    @IBOutlet weak var userPosts: UILabel!
+    
+    @IBOutlet weak var userFollowers: UILabel!
+    
+    @IBOutlet weak var userFollowing: UILabel!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userDescription: UILabel!
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {

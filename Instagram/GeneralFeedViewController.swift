@@ -1,42 +1,38 @@
 //
-//  FeedViewController.swift
+//  GeneralFeedViewController.swift
 //  Instagram
 //
-//  Created by Philip Teow on 19/02/2018.
+//  Created by Philip Teow on 21/02/2018.
 //  Copyright © 2018 Ying Mei Lum. All rights reserved.
 //
 
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-import FirebaseStorage
 
-class FeedViewController: UIViewController {
+class GeneralFeedViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
-            tableView.rowHeight = 580
             tableView.separatorStyle = .none
+            tableView.rowHeight = 580
         }
     }
     
-    
+    var selectedPost : Post = Post()
     var posts : [Post] = []
     var ref : DatabaseReference!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         ref = Database.database().reference()
         observePost()
     }
     
-    
     func observePost() {
-        ref.child("posts").queryOrdered(byChild: "timeStamp").observe(.childAdded) { (snapshot) in
+        ref.child("posts").child(selectedPost.postID).observeSingleEvent(of: .value) { (snapshot) in
             
             guard let postDict = snapshot.value as? [String : Any] else {return}
             let aPost = Post(postID: snapshot.key, dict: postDict)
@@ -48,25 +44,20 @@ class FeedViewController: UIViewController {
             }
             
             
-        
+            
         }
     }
-    
-    
-    
-
     
 
 
 }
-extension FeedViewController : UITableViewDataSource {
+
+extension GeneralFeedViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? FeedTableViewCell else {return UITableViewCell()}
-        
         guard let cell = Bundle.main.loadNibNamed("PostsTableViewCell", owner: nil, options: nil)?.first as? PostsTableViewCell else {return UITableViewCell()}
         
         cell.selectionStyle = .none
@@ -80,7 +71,7 @@ extension FeedViewController : UITableViewDataSource {
             
             cell.usernameLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
             cell.usernameLabel2.font = UIFont.boldSystemFont(ofSize: 17.0)
-
+            
             cell.usernameLabel.text = posterUsername
             cell.usernameLabel2.text = posterUsername
             
@@ -116,7 +107,7 @@ extension FeedViewController : UITableViewDataSource {
     }
 }
 
-extension FeedViewController : PostsTableViewCellDelegate {
+extension GeneralFeedViewController : PostsTableViewCellDelegate {
     func goToCommentViewController(at : IndexPath) {
         
         guard let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CommentViewController") as? CommentViewController else {return}
@@ -142,39 +133,8 @@ extension FeedViewController : PostsTableViewCellDelegate {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
-        
-        
-        
-        
     }
     
     
 }
 
-
-
-
-
-extension UIViewController {
-    func getImage(_ urlString: String, _ imageView: UIImageView) {
-        guard let url = URL.init(string: urlString) else {return}
-        
-        let session = URLSession.shared
-        
-        let task = session.dataTask(with: url) { (data, response, error) in
-            if let validError = error {
-                print(validError.localizedDescription)
-            }
-            
-            if let validData = data {
-                let profileImage = UIImage(data: validData)
-                
-                DispatchQueue.main.async {
-                    imageView.image = profileImage
-                }
-            }
-        }
-        task.resume()
-    }
-
-}

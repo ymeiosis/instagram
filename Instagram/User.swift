@@ -16,6 +16,9 @@ class User {
     var username : String = ""
     var url : String = ""
     
+    init() {
+        
+    }
     
     init(uid: String, dict: [String:Any]) {
         

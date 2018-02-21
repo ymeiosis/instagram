@@ -11,6 +11,11 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class GeneralProfileViewController: UIViewController {
+    @IBOutlet weak var followButton: UIButton! {
+        didSet {
+            followButton.addTarget(self, action: #selector(followButtonTapped), for: .touchUpInside)
+        }
+    }
     @IBOutlet weak var profilePicImageView: UIImageView! {
         didSet {
             profilePicImageView.layer.borderWidth = 1.0
@@ -90,6 +95,20 @@ class GeneralProfileViewController: UIViewController {
             
         }
         
+    }
+    
+    @objc func followButtonTapped() {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+        
+        ref.child("users").child(selectedUser.uid).child("followers").setValue([currentUserID : true])
+        
+        ref.child("users").child(selectedUser.uid).child("followers").observeSingleEvent(of: .value) { (snapshot) in
+            guard let followers = snapshot.value as? [String : Bool] else {return}
+            self.userFollowers.text = String(followers.count)
+        }
+        
+        ref.child("users").child(currentUserID).child("following").setValue([selectedUser.uid : true])
+
     }
 
     

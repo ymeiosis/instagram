@@ -777,6 +777,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="PSy-eu-p6g" id="66W-6e-tZW"/>
+                        <outlet property="followButton" destination="cfY-Ym-rsk" id="rVx-hc-0FW"/>
                         <outlet property="profilePicImageView" destination="6nC-pi-480" id="dLb-lS-Gxg"/>
                         <outlet property="userFollowers" destination="Wz8-Aj-C4O" id="S3Y-OY-1yL"/>
                         <outlet property="userFollowing" destination="dEm-hX-Bqa" id="x9Y-En-Ify"/>

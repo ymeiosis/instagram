@@ -25,13 +25,14 @@
 		FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FA203A8A810085A9F7 /* CameraViewController.swift */; };
 		FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */; };
 		FCD723FF203AAC2D0085A9F7 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */; };
-		FCD72401203AADBE0085A9F7 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */; };
 		FCD72403203AADE00085A9F7 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */; };
 		FCD72405203AB5420085A9F7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72404203AB5420085A9F7 /* Post.swift */; };
 		FCD72408203BCB170085A9F7 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */; };
 		FCD72409203BCB170085A9F7 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */; };
 		FCD7240B203C02620085A9F7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7240A203C02620085A9F7 /* Comment.swift */; };
 		FCD7240D203D22580085A9F7 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7240C203D22580085A9F7 /* ProfileCollectionViewCell.swift */; };
+		FCD7240F203D47500085A9F7 /* GeneralFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7240E203D47500085A9F7 /* GeneralFeedViewController.swift */; };
+		FCD72411203D477B0085A9F7 /* GeneralProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72410203D477B0085A9F7 /* GeneralProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,13 +58,14 @@
 		FCD723FA203A8A810085A9F7 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
-		FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		FCD72404203AB5420085A9F7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		FCD7240A203C02620085A9F7 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		FCD7240C203D22580085A9F7 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCD7240E203D47500085A9F7 /* GeneralFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFeedViewController.swift; sourceTree = "<group>"; };
+		FCD72410203D477B0085A9F7 /* GeneralProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,16 +113,17 @@
 				CB024613203A79C6000DD679 /* ViewController.swift */,
 				FCD723F2203A8A440085A9F7 /* LoginViewController.swift */,
 				FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */,
-				FCD72400203AADBE0085A9F7 /* FeedTableViewCell.swift */,
+				FCD7240E203D47500085A9F7 /* GeneralFeedViewController.swift */,
+				FCD72410203D477B0085A9F7 /* GeneralProfileViewController.swift */,
 				FCD723F6203A8A620085A9F7 /* FeedViewController.swift */,
 				FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */,
 				FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */,
-				FCD72404203AB5420085A9F7 /* Post.swift */,
 				FCD723F8203A8A720085A9F7 /* SearchViewController.swift */,
 				AA509983203D498800E8FBB2 /* SearchTableViewCell.swift */,
 				FCD723FA203A8A810085A9F7 /* CameraViewController.swift */,
 				FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */,
 				AAB947B7203AADD2001BB6BF /* User.swift */,
+				FCD72404203AB5420085A9F7 /* Post.swift */,
 				AAB947B5203AABA5001BB6BF /* Extension.swift */,
 				CB024615203A79C6000DD679 /* Main.storyboard */,
 				FCD7240C203D22580085A9F7 /* ProfileCollectionViewCell.swift */,
@@ -310,10 +313,11 @@
 				FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */,
 				FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */,
 				AAB947B8203AADD2001BB6BF /* User.swift in Sources */,
+				FCD7240F203D47500085A9F7 /* GeneralFeedViewController.swift in Sources */,
 				CB024612203A79C6000DD679 /* AppDelegate.swift in Sources */,
+				FCD72411203D477B0085A9F7 /* GeneralProfileViewController.swift in Sources */,
 				FCD72408203BCB170085A9F7 /* PostsTableViewCell.swift in Sources */,
 				FCD723FF203AAC2D0085A9F7 /* CommentViewController.swift in Sources */,
-				FCD72401203AADBE0085A9F7 /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

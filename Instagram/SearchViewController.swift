@@ -20,7 +20,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.rowHeight = 100
+            tableView.rowHeight = 120
         }
     }
     
@@ -47,6 +47,8 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
         
         observeUsers()
         currentUsers = users
+        
+       
     
     }
 

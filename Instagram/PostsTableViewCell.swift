@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 protocol PostsTableViewCellDelegate {
     func goToCommentViewController(at : IndexPath)
+    func goToGeneralProfile(_ userID: String)
 }
 
 class PostsTableViewCell: UITableViewCell {
@@ -24,14 +25,14 @@ class PostsTableViewCell: UITableViewCell {
             profilePicImageView.clipsToBounds = true
             
             profilePicImageView.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(commentImageViewTapped))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(goToProfile))
             profilePicImageView.addGestureRecognizer(tap)
         }
     }
     @IBOutlet weak var usernameLabel: UILabel! {
         didSet {
             usernameLabel.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(commentImageViewTapped))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(goToProfile))
             usernameLabel.addGestureRecognizer(tap)
         }
     }
@@ -60,7 +61,7 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel2: UILabel! {
         didSet {
             usernameLabel2.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(commentImageViewTapped))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(goToProfile))
             usernameLabel2.addGestureRecognizer(tap)
         }
     }
@@ -140,11 +141,12 @@ class PostsTableViewCell: UITableViewCell {
             if let likers = snapshot.value as? [String : Bool] {
                 self.numOfLikesLabel.text = String(likers.count) + " likes"
             }
-            
         }
-        
-        
-        
+    }
+    
+    @objc func goToProfile() {
+        let posterID = posts[atIndexPath.row].posterID
+        delegate?.goToGeneralProfile(posterID)
         
     }
     

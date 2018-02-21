@@ -1,26 +1,21 @@
 //
-//  ProfileViewController.swift
+//  GeneralProfileViewController.swift
 //  Instagram
 //
-//  Created by Philip Teow on 19/02/2018.
+//  Created by Philip Teow on 21/02/2018.
 //  Copyright © 2018 Ying Mei Lum. All rights reserved.
 //
 
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-import FBSDKLoginKit
 
-class ProfileViewController: UIViewController {
-    
-    @IBOutlet weak var logOutButton: UIBarButtonItem!
-     {
+class GeneralProfileViewController: UIViewController {
+    @IBOutlet weak var followButton: UIButton! {
         didSet {
-            logOutButton.target = self
-            logOutButton.action = #selector(logOutButtonTapped)
+            followButton.addTarget(self, action: #selector(followButtonTapped), for: .touchUpInside)
         }
     }
-    
     @IBOutlet weak var profilePicImageView: UIImageView! {
         didSet {
             profilePicImageView.layer.borderWidth = 1.0
@@ -47,30 +42,25 @@ class ProfileViewController: UIViewController {
     }
     
     
-    var posts : [Post] = []
     
+    
+    
+    
+    var posts : [Post] = []
     var ref : DatabaseReference!
     
-    var currentUserID : String = ""
-    
+    var selectedUser : User = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        
-        if (Auth.auth().currentUser?.uid) != nil {
-            currentUserID = (Auth.auth().currentUser?.uid)!
-        }
-        
         observePosts()
-        observeCurrentUserInfo()
-        
-        
+        observeSelectedUserInfo()
     }
     
-    func observeCurrentUserInfo() {
-        ref.child("users").child(currentUserID).observeSingleEvent(of: .value) { (snapshot) in
+    func observeSelectedUserInfo() {
+        ref.child("users").child(selectedUser.uid).observeSingleEvent(of: .value) { (snapshot) in
             guard let userDict = snapshot.value as? [String : Any] else {return}
             
             DispatchQueue.main.async {
@@ -89,8 +79,7 @@ class ProfileViewController: UIViewController {
     }
     
     func observePosts() {
-        
-        ref.child("users").child(currentUserID).child("posts").observe(.childAdded) { (snapshot) in
+        ref.child("users").child(selectedUser.uid).child("posts").observe(.childAdded) { (snapshot) in
             
             self.ref.child("posts").child(snapshot.key).observeSingleEvent(of: .value, with: { (snapshot) in
                 
@@ -108,19 +97,25 @@ class ProfileViewController: UIViewController {
         
     }
     
-    @objc func logOutButtonTapped() {
-        do{
-            try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
-        } catch {
-            FBSDKLoginManager().logOut()
-            self.dismiss(animated: true, completion: nil)
+    @objc func followButtonTapped() {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+        
+        ref.child("users").child(selectedUser.uid).child("followers").setValue([currentUserID : true])
+        
+        ref.child("users").child(selectedUser.uid).child("followers").observeSingleEvent(of: .value) { (snapshot) in
+            guard let followers = snapshot.value as? [String : Bool] else {return}
+            self.userFollowers.text = String(followers.count)
         }
+        
+        ref.child("users").child(currentUserID).child("following").setValue([selectedUser.uid : true])
+
     }
+
+    
 
 }
 
-extension ProfileViewController : UICollectionViewDataSource {
+extension GeneralProfileViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
@@ -136,7 +131,7 @@ extension ProfileViewController : UICollectionViewDataSource {
     }
 }
 
-extension ProfileViewController : UICollectionViewDelegate {
+extension GeneralProfileViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "GeneralFeedViewController") as? GeneralFeedViewController else {return}
         
@@ -147,4 +142,5 @@ extension ProfileViewController : UICollectionViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 

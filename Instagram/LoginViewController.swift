@@ -115,15 +115,16 @@ class LoginViewController: UIViewController {
                 // Getting details based on FB Credentials
                 if let validUser = user {
                     if let validResult = result as? [String:Any],
-                        let name = validResult["name"] as? String,
-                        let email = validResult["email"] as? String {
+                        let name = validResult["name"] as? String {
+                        //let email = validResult["email"] as? String {
+                        
                     
                 // Create User ID in Database
                         if let picture = validResult["picture"] as? [String:Any],
                         let data = picture["data"] as? [String:Any],
                             let url = data["url"] as? String {
                             
-                            let fbUser : [String:Any] = ["email" : email, "username" : name, "profilePicUrl" : url]
+                            let fbUser : [String:Any] = ["username" : name, "profilePicUrl" : url]
                             
                             self.ref.child("users").child(validUser.uid).setValue(fbUser)
                             

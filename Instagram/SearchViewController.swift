@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
-        //            tableView.delegate = self
+            tableView.delegate = self
             tableView.rowHeight = 100
         }
     }
@@ -161,9 +161,19 @@ extension SearchViewController : UITableViewDataSource {
     
 }
 
-//extension SearchViewController : UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        return UITableViewCell()
-//    }
-//}
+extension SearchViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "GeneralProfileViewController") as? GeneralProfileViewController else {return}
+        
+        let selectedUser = users[indexPath.row]
+            vc.selectedUser = selectedUser
+            
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
+    }
+
 

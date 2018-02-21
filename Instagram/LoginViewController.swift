@@ -46,10 +46,16 @@ class LoginViewController: UIViewController {
         
         ref = Database.database().reference()
         
-  
+        if Auth.auth().currentUser != nil {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {return}
+            
+            present(vc, animated: true, completion: nil)
         
-       
         
+    }
         
     }
 

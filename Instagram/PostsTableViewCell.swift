@@ -135,11 +135,19 @@ class PostsTableViewCell: UITableViewCell {
         
         ref.child("posts").child(posts[atIndexPath.row].postID).child("likes").updateChildValues([currentUserID : true])
         heartImageView.image = UIImage(named: "redHeart")
-
+        
+        ref.child("posts").child(posts[atIndexPath.row].postID).child("likes").observeSingleEvent(of: .value) { (snapshot) in
+            if let likers = snapshot.value as? [String : Bool] {
+                self.numOfLikesLabel.text = String(likers.count) + " likes"
+            }
+            
+        }
+        
+        
         
         
     }
-
-
+    
+    
     
 }

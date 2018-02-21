@@ -13,16 +13,28 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class CameraViewController: UIViewController, FusumaDelegate {
+   
     var ref: DatabaseReference!
     
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
        print("One image selected")
-        uploadToStorage(image)
         
+//     uploadToStorage(image)
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostPhotoViewController") as? PostPhotoViewController else {return}
+        vc.image = image
+        self.present(vc,animated: true, completion: nil)
+        
+    
     }
     
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
         print("Multiple images selected")
+        
+        //     uploadToStorage(image)
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostPhotoViewController") as? PostPhotoViewController else {return}
+        vc.image = images[0]
+        self.present(vc,animated: true, completion: nil)
+        
     }
     
     func fusumaVideoCompleted(withFileURL fileURL: URL) {
@@ -45,9 +57,6 @@ class CameraViewController: UIViewController, FusumaDelegate {
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode, metaData: ImageMetadata) {
         
     }
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,36 +85,8 @@ class CameraViewController: UIViewController, FusumaDelegate {
 //        self.present(fusuma, animated: true, completion: nil)
         self.parent?.present(fusuma, animated: true, completion: nil)
     }
+    
 
-    func uploadToStorage(_ image: UIImage) {
-        
-        //Create Storage reference (location)
-        let storageRef = Storage.storage().reference()
-        
-        //convert image to data
-        guard let imageData = UIImageJPEGRepresentation(image, 1.0) else {return}
-        
-        // metadata contains details on the file type
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/jpeg"
-        
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        
-        storageRef.child(uid).child("post\(arc4random())").putData(imageData, metadata: metaData) { (meta, error) in
-            
-            //Error Handling
-            if let validError = error {
-                print(validError.localizedDescription)
-            }
-            
-            //Handle Successful case with metadata returned
-            //MetaData contains details on the file uploaded on storage
-            // We are checking whether a download URL exists
-            if let downloadURL = meta?.downloadURL()?.absoluteString {
-                self.ref.child("posts").child("post\(arc4random())").child("postedPicUrl").setValue(downloadURL)
-                
-            }
-        }
-    }
+
 
 }

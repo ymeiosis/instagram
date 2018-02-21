@@ -13,8 +13,7 @@ class User {
     
     var uid : String = ""
     var email : String = ""
-    var name : String = ""
-    var userName : String = ""
+    var username : String = ""
     var url : String = ""
     
     
@@ -22,8 +21,7 @@ class User {
         
         self.uid = uid
         self.email = dict["email"] as? String ?? "No Email"
-        self.name = dict["name"] as? String ?? "No Name"
-        self.userName = dict["userName"] as? String ?? "No Username"
+        self.username = dict["username"] as? String ?? "No Username"
         self.url = dict["url"] as? String ?? "No Url"
         
     }

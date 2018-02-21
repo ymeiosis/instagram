@@ -46,10 +46,16 @@ class LoginViewController: UIViewController {
         
         ref = Database.database().reference()
         
-  
+        if Auth.auth().currentUser != nil {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else {return}
+            
+            present(vc, animated: true, completion: nil)
         
-       
         
+    }
         
     }
 
@@ -116,14 +122,15 @@ class LoginViewController: UIViewController {
                 if let validUser = user {
                     if let validResult = result as? [String:Any],
                         let name = validResult["name"] as? String {
-                        //let email = validResult["email"] as? String
+                        //let email = validResult["email"] as? String {
+                        
                     
                 // Create User ID in Database
                         if let picture = validResult["picture"] as? [String:Any],
                         let data = picture["data"] as? [String:Any],
                             let url = data["url"] as? String {
                             
-                            let fbUser : [String:Any] = [ "username" : name, "profilePicUrl" : url]
+                            let fbUser : [String:Any] = ["username" : name, "profilePicUrl" : url]
                             
                             self.ref.child("users").child(validUser.uid).setValue(fbUser)
                             

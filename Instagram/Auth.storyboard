@@ -118,14 +118,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-nu-nv5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="161"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTg-nu-nv5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="161" id="Wsm-qG-a2y"/>
+                                    <constraint firstAttribute="height" constant="180" id="Wsm-qG-a2y"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="esY-xY-HrR">
-                                <rect key="frame" x="40" y="325" width="295" height="240"/>
+                                <rect key="frame" x="40" y="344" width="295" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="mBf-8V-Bfa">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="240"/>
@@ -159,11 +159,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-Iv-xdp">
-                                <rect key="frame" x="40" y="595" width="295" height="30"/>
+                                <rect key="frame" x="40" y="614" width="295" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-rz-caJ">
-                                <rect key="frame" x="40" y="245" width="295" height="30"/>
+                                <rect key="frame" x="40" y="274" width="295" height="30"/>
                                 <state key="normal" title="Change Profile Image"/>
                                 <connections>
                                     <action selector="loadImageButtonTapped:" destination="x4B-Fo-JGX" eventType="touchUpInside" id="vuE-Zz-Air"/>
@@ -176,7 +176,7 @@
                             <constraint firstItem="esY-xY-HrR" firstAttribute="top" secondItem="oTg-nu-nv5" secondAttribute="bottom" constant="100" id="EMD-gi-d3w"/>
                             <constraint firstItem="IvO-rz-caJ" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" constant="40" id="Fw7-Av-eRA"/>
                             <constraint firstItem="oTg-nu-nv5" firstAttribute="top" secondItem="0t0-7j-uEW" secondAttribute="top" constant="64" id="NYo-sv-IfQ"/>
-                            <constraint firstItem="IvO-rz-caJ" firstAttribute="top" secondItem="oTg-nu-nv5" secondAttribute="bottom" constant="20" id="OBd-sY-GoK"/>
+                            <constraint firstItem="IvO-rz-caJ" firstAttribute="top" secondItem="oTg-nu-nv5" secondAttribute="bottom" constant="30" id="OBd-sY-GoK"/>
                             <constraint firstItem="esY-xY-HrR" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" constant="40" id="S2a-db-JZS"/>
                             <constraint firstItem="gve-pz-sc1" firstAttribute="trailing" secondItem="Vdd-Iv-xdp" secondAttribute="trailing" constant="40" id="Xnc-dj-g2W"/>
                             <constraint firstItem="Vdd-Iv-xdp" firstAttribute="leading" secondItem="gve-pz-sc1" secondAttribute="leading" constant="40" id="c6M-Zs-vrM"/>
@@ -221,5 +221,6 @@
     </scenes>
     <resources>
         <image name="signup" width="1125" height="683"/>
+        <image name="user" width="512" height="512"/>
     </resources>
 </document>

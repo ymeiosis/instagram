@@ -304,7 +304,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-yU-9SQ">
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-yU-9SQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -312,7 +312,7 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="542"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Ohx-yT-gTr" detailTextLabel="lO5-fn-TkS" style="IBUITableViewCellStyleSubtitle" id="2lb-55-cmD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" textLabel="Ohx-yT-gTr" detailTextLabel="lO5-fn-TkS" style="IBUITableViewCellStyleSubtitle" id="2lb-55-cmD">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2lb-55-cmD" id="KCJ-p8-WEA">
@@ -359,6 +359,10 @@
                         <viewLayoutGuide key="safeArea" id="or2-b7-hDO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-search-filled-20" id="mBe-V5-GVo"/>
+                    <connections>
+                        <outlet property="searchViewController" destination="hV0-yU-9SQ" id="unH-yb-s5W"/>
+                        <outlet property="tableView" destination="ENt-Tb-NfO" id="cox-Ky-adi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGu-5l-QHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -551,6 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujO-CG-hiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="938" y="63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zJv-sU-qqb">

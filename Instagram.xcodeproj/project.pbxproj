@@ -17,6 +17,7 @@
 		CB024617203A79C6000DD679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB024615203A79C6000DD679 /* Main.storyboard */; };
 		CB024619203A79C6000DD679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB024618203A79C6000DD679 /* Assets.xcassets */; };
 		CB02461C203A79C6000DD679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB02461A203A79C6000DD679 /* LaunchScreen.storyboard */; };
+		CBC82CBB203D5DCC0064C37F /* PostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC82CBA203D5DCC0064C37F /* PostPhotoViewController.swift */; };
 		FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F2203A8A440085A9F7 /* LoginViewController.swift */; };
 		FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */; };
 		FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F6203A8A620085A9F7 /* FeedViewController.swift */; };
@@ -48,6 +49,7 @@
 		CB024618203A79C6000DD679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB02461B203A79C6000DD679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB02461D203A79C6000DD679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBC82CBA203D5DCC0064C37F /* PostPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPhotoViewController.swift; sourceTree = "<group>"; };
 		FCD723F2203A8A440085A9F7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FCD723F6203A8A620085A9F7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */,
 				FCD723F8203A8A720085A9F7 /* SearchViewController.swift */,
 				FCD723FA203A8A810085A9F7 /* CameraViewController.swift */,
+				CBC82CBA203D5DCC0064C37F /* PostPhotoViewController.swift */,
 				FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */,
 				AAB947B7203AADD2001BB6BF /* User.swift */,
 				FCD72404203AB5420085A9F7 /* Post.swift */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB947B6203AABA5001BB6BF /* Extension.swift in Sources */,
+				CBC82CBB203D5DCC0064C37F /* PostPhotoViewController.swift in Sources */,
 				FCD72403203AADE00085A9F7 /* CommentTableViewCell.swift in Sources */,
 				FCD723F9203A8A720085A9F7 /* SearchViewController.swift in Sources */,
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,

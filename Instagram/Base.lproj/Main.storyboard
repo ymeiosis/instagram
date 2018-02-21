@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -296,6 +297,68 @@
             </objects>
             <point key="canvasLocation" x="3121" y="-103"/>
         </scene>
+        <!--Post Photo View Controller-->
+        <scene sceneID="z8y-Nq-gfb">
+            <objects>
+                <viewController storyboardIdentifier="PostPhotoViewController" id="ZtM-2n-xee" customClass="PostPhotoViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T60-oL-xU0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V2k-HP-XWy">
+                                <rect key="frame" x="20" y="254" width="335" height="335"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="V2k-HP-XWy" secondAttribute="height" multiplier="1:1" id="o2h-bm-Uvl"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aal-Xk-vhc">
+                                <rect key="frame" x="20" y="597" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PkK-fg-Lvl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="4bF-Bg-dYh">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="kJu-g7-TUQ">
+                                            <connections>
+                                                <action selector="backBtn:" destination="ZtM-2n-xee" id="cD2-5U-l5T"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Post" id="M5v-m4-BVL">
+                                            <connections>
+                                                <action selector="postBtn:" destination="ZtM-2n-xee" id="B26-Ap-MLi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V2k-HP-XWy" firstAttribute="leading" secondItem="tDn-m7-7hh" secondAttribute="leading" constant="20" id="7ru-nM-n50"/>
+                            <constraint firstItem="aal-Xk-vhc" firstAttribute="leading" secondItem="tDn-m7-7hh" secondAttribute="leading" constant="20" id="IPq-Ew-YUt"/>
+                            <constraint firstItem="PkK-fg-Lvl" firstAttribute="trailing" secondItem="tDn-m7-7hh" secondAttribute="trailing" id="KXO-fp-a8G"/>
+                            <constraint firstItem="tDn-m7-7hh" firstAttribute="trailing" secondItem="aal-Xk-vhc" secondAttribute="trailing" constant="20" id="Kt8-wE-IEp"/>
+                            <constraint firstItem="PkK-fg-Lvl" firstAttribute="leading" secondItem="tDn-m7-7hh" secondAttribute="leading" id="NEX-vN-C7z"/>
+                            <constraint firstItem="PkK-fg-Lvl" firstAttribute="top" secondItem="tDn-m7-7hh" secondAttribute="top" id="XeT-VP-i4h"/>
+                            <constraint firstItem="tDn-m7-7hh" firstAttribute="bottom" secondItem="aal-Xk-vhc" secondAttribute="bottom" constant="40" id="kqQ-lb-kQL"/>
+                            <constraint firstItem="tDn-m7-7hh" firstAttribute="trailing" secondItem="V2k-HP-XWy" secondAttribute="trailing" constant="20" id="vc1-x7-soo"/>
+                            <constraint firstItem="aal-Xk-vhc" firstAttribute="top" secondItem="V2k-HP-XWy" secondAttribute="bottom" constant="8" symbolic="YES" id="z41-MG-fRq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tDn-m7-7hh"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionTextField" destination="aal-Xk-vhc" id="KKJ-iO-mfE"/>
+                        <outlet property="imageView" destination="V2k-HP-XWy" id="A9F-Se-WDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTi-wH-ItS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3818.4000000000001" y="-101.19940029985008"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="PXr-vb-jsP">
             <objects>
@@ -560,7 +623,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zJv-sU-qqb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Us7-DC-bNI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" id="Us7-DC-bNI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icons8-home-22" id="95c-Z1-ybU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lh2-VG-EYB">

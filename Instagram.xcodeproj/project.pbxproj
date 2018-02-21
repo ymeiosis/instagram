@@ -17,7 +17,6 @@
 		CB024617203A79C6000DD679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB024615203A79C6000DD679 /* Main.storyboard */; };
 		CB024619203A79C6000DD679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB024618203A79C6000DD679 /* Assets.xcassets */; };
 		CB02461C203A79C6000DD679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB02461A203A79C6000DD679 /* LaunchScreen.storyboard */; };
-		CBC82CB9203B35120064C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC82CB8203B35120064C37F /* CollectionViewCell.swift */; };
 		FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F2203A8A440085A9F7 /* LoginViewController.swift */; };
 		FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */; };
 		FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD723F6203A8A620085A9F7 /* FeedViewController.swift */; };
@@ -31,6 +30,7 @@
 		FCD72408203BCB170085A9F7 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */; };
 		FCD72409203BCB170085A9F7 /* PostsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */; };
 		FCD7240B203C02620085A9F7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7240A203C02620085A9F7 /* Comment.swift */; };
+		FCD7240D203D22580085A9F7 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7240C203D22580085A9F7 /* ProfileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,6 @@
 		CB024618203A79C6000DD679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB02461B203A79C6000DD679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB02461D203A79C6000DD679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBC82CB8203B35120064C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD723F2203A8A440085A9F7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCD723F4203A8A540085A9F7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FCD723F6203A8A620085A9F7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		FCD72406203BCB170085A9F7 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsTableViewCell.xib; sourceTree = "<group>"; };
 		FCD7240A203C02620085A9F7 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		FCD7240C203D22580085A9F7 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 				AAB947B7203AADD2001BB6BF /* User.swift */,
 				AAB947B5203AABA5001BB6BF /* Extension.swift */,
 				CB024615203A79C6000DD679 /* Main.storyboard */,
-				CBC82CB8203B35120064C37F /* CollectionViewCell.swift */,
+				FCD7240C203D22580085A9F7 /* ProfileCollectionViewCell.swift */,
 				FCD72402203AADE00085A9F7 /* CommentTableViewCell.swift */,
 				FCD723FE203AAC2D0085A9F7 /* CommentViewController.swift */,
 				FCD7240A203C02620085A9F7 /* Comment.swift */,
@@ -299,10 +299,10 @@
 				FCD723F3203A8A440085A9F7 /* LoginViewController.swift in Sources */,
 				CB024614203A79C6000DD679 /* ViewController.swift in Sources */,
 				FCD7240B203C02620085A9F7 /* Comment.swift in Sources */,
-				CBC82CB9203B35120064C37F /* CollectionViewCell.swift in Sources */,
 				FCD72405203AB5420085A9F7 /* Post.swift in Sources */,
 				FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */,
 				FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */,
+				FCD7240D203D22580085A9F7 /* ProfileCollectionViewCell.swift in Sources */,
 				FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */,
 				FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */,
 				AAB947B8203AADD2001BB6BF /* User.swift in Sources */,

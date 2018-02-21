@@ -7,16 +7,27 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+import FBSDKLoginKit
 
 class ProfileViewController: UIViewController {
-
-    @IBAction func addUser(_ sender: Any) {
+    
+    @IBOutlet weak var logOutButton: UIButton! {
+        didSet {
+            logOutButton.addTarget(self, action: #selector(logOutButtonTapped), for: .touchUpInside)
+        }
     }
     
-    @IBAction func refresh(_ sender: Any) {
+    @IBOutlet weak var profilePicImageView: UIImageView! {
+        didSet {
+            profilePicImageView.layer.borderWidth = 1.0
+            profilePicImageView.layer.masksToBounds = false
+            profilePicImageView.layer.borderColor = UIColor.white.cgColor
+            profilePicImageView.layer.cornerRadius = profilePicImageView.frame.size.width / 2
+            profilePicImageView.clipsToBounds = true
+        }
     }
-    
-    @IBOutlet weak var userPic: UIButton!
     
     @IBOutlet weak var userPosts: UILabel!
     
@@ -26,32 +37,104 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var userName: UILabel!
     
-    @IBOutlet weak var userDescription: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionView.dataSource = self
+            collectionView.delegate = self
+        }
+    }
     
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    var posts : [Post] = []
+    
+    var ref : DatabaseReference!
+    
+    var currentUserID : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        collectionView
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        ref = Database.database().reference()
+        
+        if (Auth.auth().currentUser?.uid) != nil {
+            currentUserID = (Auth.auth().currentUser?.uid)!
+        }
+        
+        observePosts()
+        observeCurrentUserInfo()
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func observeCurrentUserInfo() {
+        ref.child("users").child(currentUserID).observeSingleEvent(of: .value) { (snapshot) in
+            guard let userDict = snapshot.value as? [String : Any] else {return}
+            
+            DispatchQueue.main.async {
+                let picUrl = userDict["profilePicUrl"] as? String ?? "no url"
+                let username = userDict["username"] as? String ?? "no username"
+                let numOfFollowers = userDict["followers"] as? [String : Bool] ?? [:]
+                let numOfFollowing = userDict["following"] as? [String : Bool] ?? [:]
+                
+                self.userName.text = username
+                self.getImage(picUrl, self.profilePicImageView)
+                self.userFollowers.text = String(numOfFollowers.count)
+                self.userFollowing.text = String(numOfFollowing.count)
+                self.userPosts.text = String(self.posts.count)
+            }
+        }
     }
-    */
+    
+    func observePosts() {
+        
+        ref.child("users").child(currentUserID).child("posts").observe(.childAdded) { (snapshot) in
+            
+            self.ref.child("posts").child(snapshot.key).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                guard let postDict = snapshot.value as? [String : Any] else {return}
+                let aPost = Post(postID: snapshot.key, dict: postDict)
+                
+                DispatchQueue.main.async {
+                    self.posts.append(aPost)
+                    let indexPath = IndexPath(row: self.posts.count - 1, section: 0)
+                    self.collectionView.insertItems(at: [indexPath])
+                }
+            })
+            
+        }
+        
+    }
+    
+    @objc func logOutButtonTapped() {
+        do{
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        } catch {
+            FBSDKLoginManager().logOut()
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 
 }
+
+extension ProfileViewController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProfileCollectionViewCell else {return UICollectionViewCell()}
+        
+        let currentPost = posts[indexPath.row]
+        
+        getImage(currentPost.postedPicUrl, cell.postImageView)
+        
+        return cell
+    }
+}
+
+extension ProfileViewController : UICollectionViewDelegate {
+    
+}
+

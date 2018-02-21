@@ -36,12 +36,16 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
+    var logOutChecker : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         ref = Database.database().reference()
 
-     
+        if logOutChecker == true {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func signUpUser() {
@@ -74,6 +78,8 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
                     let userPost: [String:Any] = ["email" : email, "username" : userName]
                     
                     self.ref.child("users").child(validUser.uid).setValue(userPost)
+                    
+                    self.logOutChecker = true
                     
                     let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     

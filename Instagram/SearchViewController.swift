@@ -19,28 +19,34 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+        //            tableView.delegate = self
+            tableView.rowHeight = 100
         }
     }
+    
+    
     @IBOutlet weak var searchViewController: UISearchBar!
     
     var filtered : [String] = []
     var searchActive : Bool = false
-    let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController()
     var ref : DatabaseReference!
     var users : [User] = []
+    var currentUsers : [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
         searchController.delegate = self
         searchController.searchBar.delegate = self
-       // searchController.searchResultsUpdater = self
+        //searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         
-        searchController.hidesNavigationBarDuringPresentation = false
+       searchController.hidesNavigationBarDuringPresentation = false
         
         observeUsers()
+        currentUsers = users
     
     }
 
@@ -63,6 +69,20 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
         searchActive = false
         tableView.reloadData()
     }
+    // Search Bar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            currentUsers = users
+            tableView.reloadData()
+            return
+        }
+        currentUsers = users.filter({ (User) -> Bool in
+            User.username.contains(searchText)
+        })
+        tableView.reloadData()
+        
+    }
+
     
     func observeUsers() {
         ref.child("users").observe(.value) { (snapshot) in
@@ -93,6 +113,26 @@ class SearchViewController: UIViewController, UISearchControllerDelegate, UISear
         
     }
     
+    func renderImage(_ urlString: String, cellImageView: UIImageView) {
+        
+        guard let url = URL.init(string: urlString) else {return}
+        let session = URLSession.shared
+        
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if let validError = error {
+                print(validError.localizedDescription)
+            }
+            
+            if let validData = data {
+                let image = UIImage(data: validData)
+                
+                DispatchQueue.main.async {
+                    cellImageView.image = image
+                }
+            }
+        }
+        task.resume()
+    }
   
 
 }
@@ -104,12 +144,26 @@ extension SearchViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as? SearchTableViewCell else {return UITableViewCell()}
         
-        cell.textLabel?.text = users[indexPath.row].username
         
+        let url = users[indexPath.row].url
+        if let a = cell.profileImageView {
+            renderImage(url, cellImageView: a)
+        }
+        
+        cell.usernameTextLabel.text = users[indexPath.row].username
         
         return cell
         
     }
+    
+    
 }
+
+//extension SearchViewController : UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        return UITableViewCell()
+//    }
+//}
+

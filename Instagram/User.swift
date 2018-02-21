@@ -17,12 +17,14 @@ class User {
     var url : String = ""
     
     
+    
+    
     init(uid: String, dict: [String:Any]) {
         
         self.uid = uid
         self.email = dict["email"] as? String ?? "No Email"
         self.username = dict["username"] as? String ?? "No Username"
-        self.url = dict["url"] as? String ?? "No Url"
+        self.url = dict["profilePicUrl"] as? String ?? "No Url"
         
     }
     

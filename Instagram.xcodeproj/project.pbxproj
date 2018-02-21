@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6886D7427C506A536B3E717E /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F686C1D7086249EF66E516F /* Pods_Instagram.framework */; };
+		AA509984203D498800E8FBB2 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA509983203D498800E8FBB2 /* SearchTableViewCell.swift */; };
 		AAB947B2203A7C69001BB6BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAB947B1203A7C69001BB6BF /* GoogleService-Info.plist */; };
 		AAB947B4203A8CFF001BB6BF /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB947B3203A8CFF001BB6BF /* Auth.storyboard */; };
 		AAB947B6203AABA5001BB6BF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB947B5203AABA5001BB6BF /* Extension.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		472E31DEED44F8800C5B1697 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		6F686C1D7086249EF66E516F /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA509983203D498800E8FBB2 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		AAB947B1203A7C69001BB6BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAB947B3203A8CFF001BB6BF /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		AAB947B5203AABA5001BB6BF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				FCD72407203BCB170085A9F7 /* PostsTableViewCell.xib */,
 				FCD72404203AB5420085A9F7 /* Post.swift */,
 				FCD723F8203A8A720085A9F7 /* SearchViewController.swift */,
+				AA509983203D498800E8FBB2 /* SearchTableViewCell.swift */,
 				FCD723FA203A8A810085A9F7 /* CameraViewController.swift */,
 				FCD723FC203A8A8F0085A9F7 /* ProfileViewController.swift */,
 				AAB947B7203AADD2001BB6BF /* User.swift */,
@@ -302,6 +305,7 @@
 				FCD72405203AB5420085A9F7 /* Post.swift in Sources */,
 				FCD723F7203A8A620085A9F7 /* FeedViewController.swift in Sources */,
 				FCD723FB203A8A810085A9F7 /* CameraViewController.swift in Sources */,
+				AA509984203D498800E8FBB2 /* SearchTableViewCell.swift in Sources */,
 				FCD7240D203D22580085A9F7 /* ProfileCollectionViewCell.swift in Sources */,
 				FCD723F5203A8A540085A9F7 /* SignUpViewController.swift in Sources */,
 				FCD723FD203A8A8F0085A9F7 /* ProfileViewController.swift in Sources */,
